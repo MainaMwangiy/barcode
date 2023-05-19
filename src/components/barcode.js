@@ -18,7 +18,7 @@ const BarCodeScanner = ({ onCodeDecoded }) => {
                 console.error(err);
             });
     }, [codeReader]);
-
+    console.log("Hello")
     function setupDevices(videoInputDevices) {
         // get the list of available media devices
         navigator.mediaDevices.enumerateDevices()
@@ -87,14 +87,14 @@ const BarCodeScanner = ({ onCodeDecoded }) => {
 
     useEffect(() => {
         setTimeout(() => setHideSwipper(""), 2000)
-        return () =>{
+        return () => {
             setHideSwipper("hide-swipper")
         }
     }, [])
 
     return (
         <div style={{ position: "absolute", height: "200px", top: "31%", left: "30%", maxWidth: "64%" }} >
-            {}
+            { }
             <div className={`swipper ${hideSwipper}`}></div>
             <video id="video" height="200" />
         </div>
